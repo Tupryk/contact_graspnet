@@ -334,6 +334,7 @@ def load_available_input_data(p, K=None):
                 rgb = np.array(cv2.cvtColor(rgb, cv2.COLOR_BGR2RGB))
         elif 'xyz' in keys:
             pc_full = np.array(data['xyz']).reshape(-1,3)
+            cam_K = np.array([[1, 0, 0],[0, 1, 0], [0, 0, 1]])
             if 'xyz_color' in keys:
                 pc_colors = data['xyz_color']
     elif '.png' in p:
@@ -698,5 +699,3 @@ class PointCloudReader:
 
     def __del__(self):
         print('********** terminating renderer **************')
-    
-
