@@ -7,8 +7,8 @@ physical_devices = tf.config.experimental.list_physical_devices('GPU')
 print(physical_devices)
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(os.path.join(BASE_DIR))
+sys.path.append(os.path.join(os.path.dirname(__file__), './'))
+
 
 import numpy as np
 import config_utils
